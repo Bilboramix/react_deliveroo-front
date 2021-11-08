@@ -1,1 +1,161 @@
 /* Other rules */
+* {
+  box-sizing: border-box;
+  object-fit: cover;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+html {
+  background-color: #f3f5f5;
+}
+
+section {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: solid 1px rgb(212, 212, 212);
+  background-color: #fff;
+}
+
+img {
+  border-radius: 10px;
+}
+
+/* Logo */
+header img {
+  width: 160px;
+  margin-left: 350px;
+}
+
+/* img top */
+.restaurant img {
+  width: 350px;
+}
+
+.meal-pic {
+  width: 130px;
+  height: 130px;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+  color: #2e3333;
+}
+
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+h3 {
+  font-size: 19px;
+  color: #2e3333;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #808484;
+}
+
+.popular {
+  color: #ff8000;
+  font-weight: bold;
+}
+
+.restaurant {
+  display: flex;
+  justify-content: center;
+  padding-top: 27px;
+  width: 100%;
+  margin-bottom: 25px;
+  background-color: white;
+  padding-bottom: 25px;
+}
+
+.restaurant > div {
+  display: flex;
+  width: 1200px;
+}
+
+.restaurant img {
+  margin-left: 50px;
+}
+
+.restaurant p {
+  font-size: 19px;
+  line-height: 28px;
+  margin-top: 35px;
+}
+
+.restaurant h1 {
+  margin-top: 20px;
+}
+
+.main-content {
+  display: flex;
+}
+
+.categories {
+  flex: 3;
+}
+
+.meal {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 400px;
+  height: 160px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  padding: 15px;
+}
+.meal:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgb(206, 206, 206);
+}
+.meal p {
+  overflow: hidden;
+  height: 30px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.price {
+  margin-right: 10px;
+  color: #808484;
+  font-size: 17px;
+}
+.meals {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Panier */
+
+.panier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  background-color: rgb(178, 182, 118);
+  height: 180px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #bac3c3;
+}
+
+.panier button {
+  font-weight: bold;
+  font-size: 17px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: #bac3c3;
+  color: #8b9a9b;
+  width: 295px;
+  margin-bottom: 50px;
+}
