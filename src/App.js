@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import logo from "./assets/imgs/logo.png";
 import Categories from "./components/Categories";
+import Cart from "./components/Cart";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 library.add(faStar);
@@ -10,6 +11,8 @@ library.add(faStar);
 const App = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [cartContent, setCartContent] = useState([]);
+  const [clickOnMeal, setClickOnMeal] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,18 +43,15 @@ const App = () => {
               <p>{data.restaurant.description}</p>
             </div>
 
-            <img src={data.restaurant.picture} />
+            <img src={data.restaurant.picture} alt="Restaurant" />
           </div>
         </section>
         <section className="main-content">
           {/* Composants principaux */}
           <div className="categories">
-            <Categories data={data} />
+            <Categories setClickOnMeal={setClickOnMeal} clickOnMeal={clickOnMeal} cartContent={cartContent} setCartContent={setCartContent} data={data} />
           </div>
-          <div className="panier">
-            <button>Valider mon panier</button>
-            <p>Votre panier est vide</p>
-          </div>
+          <Cart setClickOnMeal={setClickOnMeal} clickOnMeal={clickOnMeal} cartContent={cartContent} setCartContent={setCartContent} />
         </section>
       </main>
       <footer></footer>

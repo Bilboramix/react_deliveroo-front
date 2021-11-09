@@ -1,11 +1,24 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Meals = ({ meals }) => {
+const Meals = ({ meals, cartContent, setCartContent, setClickOnMeal, clickOnMeal }) => {
+  const handleCart = (meal) => {
+    if (cartContent.indexOf(meal) === -1) {
+      const newCart = [...cartContent];
+      newCart.push(meal);
+      setCartContent(newCart);
+    }
+  };
   return (
     <>
       {meals.map((meal, index) => {
         return (
-          <div className="meal">
+          <div
+            onClick={() => {
+              handleCart(meal);
+            }}
+            key={meals[index].id}
+            className="meal"
+          >
             <div>
               <h3>{meal.title}</h3>
               <p>{meal.description}</p>
@@ -17,7 +30,7 @@ const Meals = ({ meals }) => {
                 </span>
               )}
             </div>
-            {meal.picture && <img className="meal-pic" src={meal.picture} />}
+            {meal.picture && <img className="meal-pic" src={meal.picture} alt={meal.title} />}
           </div>
         );
       })}

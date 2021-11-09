@@ -136,26 +136,53 @@ p {
 
 /* Panier */
 
-.panier {
+.cart {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
-  background-color: rgb(178, 182, 118);
-  height: 180px;
+  background-color: #fff;
+  height: 100%;
   border-radius: 10px;
   padding: 10px;
   box-shadow: 5px 5px 5px #bac3c3;
 }
 
-.panier button {
+.cart .validate {
   font-weight: bold;
   font-size: 17px;
   height: 50px;
   border: none;
   border-radius: 5px;
-  background-color: #bac3c3;
-  color: #8b9a9b;
+  background-color: #00cdbc;
+  color: #fff;
   width: 295px;
   margin-bottom: 50px;
+}
+.cart-content {
+  width: 100%;
+}
+.line {
+  width: 100%;
+  display: flex;
+  margin: 5px 0;
+}
+
+.line button {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+.counter {
+  display: flex;
+  flex: 1;
+}
+
+.item-title {
+  flex: 3;
+}
+
+.item-price {
+  flex: 1;
 }
