@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 
-const Line = ({ item, clickOnMeal }) => {
-  const [counter, setCounter] = useState(0);
+const Line = ({ item, clickOnMeal, setClickOnMeal }) => {
+  const [counter, setCounter] = useState(1);
 
   useEffect(() => {
     console.log("trigger");
     setCounter(counter + clickOnMeal);
+    setClickOnMeal(0);
   }, [clickOnMeal]);
 
   return (
@@ -28,7 +29,7 @@ const Line = ({ item, clickOnMeal }) => {
         </button>
       </div>
       <p className="item-title">{item.title}</p>
-      <p className="item-price">{item.price} €</p>
+      <p className="item-price">{(item.price * counter).toFixed(2)} €</p>
     </>
   );
 };

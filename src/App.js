@@ -12,7 +12,7 @@ const App = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [cartContent, setCartContent] = useState([]);
-  const [clickOnMeal, setClickOnMeal] = useState(1);
+  const [clickOnMeal, setClickOnMeal] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {

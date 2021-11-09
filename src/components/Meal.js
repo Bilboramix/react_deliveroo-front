@@ -6,6 +6,8 @@ const Meals = ({ meals, cartContent, setCartContent, setClickOnMeal, clickOnMeal
       const newCart = [...cartContent];
       newCart.push(meal);
       setCartContent(newCart);
+    } else {
+      setClickOnMeal(1);
     }
   };
   return (
