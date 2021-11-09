@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react";
 
-const Line = ({ item, clickOnMeal, setClickOnMeal }) => {
+const Line = ({ item }) => {
   const [counter, setCounter] = useState(1);
 
-  useEffect(() => {
-    console.log("trigger");
-    setCounter(counter + clickOnMeal);
-    setClickOnMeal(0);
-  }, [clickOnMeal]);
+  useEffect(() => {}, []);
 
   return (
     <>

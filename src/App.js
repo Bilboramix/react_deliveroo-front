@@ -12,7 +12,6 @@ const App = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [cartContent, setCartContent] = useState([]);
-  const [clickOnMeal, setClickOnMeal] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,9 +48,9 @@ const App = () => {
         <section className="main-content">
           {/* Composants principaux */}
           <div className="categories">
-            <Categories setClickOnMeal={setClickOnMeal} clickOnMeal={clickOnMeal} cartContent={cartContent} setCartContent={setCartContent} data={data} />
+            <Categories cartContent={cartContent} setCartContent={setCartContent} data={data} />
           </div>
-          <Cart setClickOnMeal={setClickOnMeal} clickOnMeal={clickOnMeal} cartContent={cartContent} setCartContent={setCartContent} />
+          <Cart cartContent={cartContent} setCartContent={setCartContent} />
         </section>
       </main>
       <footer></footer>

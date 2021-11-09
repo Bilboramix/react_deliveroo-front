@@ -1,13 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Meals = ({ meals, cartContent, setCartContent, setClickOnMeal, clickOnMeal }) => {
+const Meals = ({ meals, cartContent, setCartContent }) => {
   const handleCart = (meal) => {
     if (cartContent.indexOf(meal) === -1) {
+      meal.quantity = 1;
       const newCart = [...cartContent];
       newCart.push(meal);
       setCartContent(newCart);
     } else {
-      setClickOnMeal(1);
+      meal.quantity += 1;
     }
   };
   return (

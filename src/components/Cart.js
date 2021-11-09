@@ -1,5 +1,6 @@
 import Line from "./Line";
-const Cart = ({ cartContent, setCartContent, setClickOnMeal, clickOnMeal }) => {
+const Cart = ({ cartContent, setCartContent }) => {
+  let total = 0;
   const fee = 2.5;
   return (
     <div className="cart">
@@ -11,7 +12,7 @@ const Cart = ({ cartContent, setCartContent, setClickOnMeal, clickOnMeal }) => {
             return (
               <div key={item.id} className="cart-content">
                 <div className="line">
-                  <Line setClickOnMeal={setClickOnMeal} clickOnMeal={clickOnMeal} item={item} />
+                  <Line item={item} />
                 </div>
               </div>
             );
