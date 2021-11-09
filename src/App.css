@@ -140,7 +140,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
+  width: 340px;
   background-color: #fff;
   height: 100%;
   border-radius: 10px;
@@ -179,14 +179,22 @@ p {
   width: 70px;
 }
 
+.quantity {
+  display: flex;
+  width: 20px;
+  justify-content: center;
+}
+
 .item-title {
   flex: 3;
   width: 160px;
   margin: 0 10px;
+  color: black;
 }
 
 .item-price {
   width: 70px;
+  color: black;
 }
 
 .prices {

@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Line = ({ cartContent, setCartContent }) => {
   return (
     <>
@@ -6,7 +8,7 @@ const Line = ({ cartContent, setCartContent }) => {
           <div key={item.id} className="cart-content">
             <div className="line">
               <div className="counter">
-                <button
+                <FontAwesomeIcon
                   onClick={() => {
                     const newCart = [...cartContent];
                     newCart[index].quantity = cartContent[index].quantity - 1;
@@ -17,19 +19,18 @@ const Line = ({ cartContent, setCartContent }) => {
                       setCartContent(newCart);
                     }
                   }}
-                >
-                  -
-                </button>
-                <span>{item.quantity}</span>
-                <button
+                  icon="minus-circle"
+                />
+                <span className="quantity">{item.quantity}</span>
+
+                <FontAwesomeIcon
                   onClick={() => {
                     const newCart = [...cartContent];
                     newCart[index].quantity = cartContent[index].quantity + 1;
                     setCartContent(newCart);
                   }}
-                >
-                  +
-                </button>
+                  icon="plus-circle"
+                />
               </div>
               <p className="item-title">{item.title}</p>
               <p className="item-price">{(item.price * item.quantity).toFixed(2)} €</p>

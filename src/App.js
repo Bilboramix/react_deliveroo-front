@@ -5,8 +5,8 @@ import logo from "./assets/imgs/logo.png";
 import Categories from "./components/Categories";
 import Cart from "./components/Cart";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-library.add(faStar);
+import { faStar, faPlusCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
+library.add(faStar, faPlusCircle, faMinusCircle);
 
 const App = () => {
   const [data, setData] = useState();
