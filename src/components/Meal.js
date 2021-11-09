@@ -9,6 +9,8 @@ const Meals = ({ meals, cartContent, setCartContent }) => {
       setCartContent(newCart);
     } else {
       meal.quantity += 1;
+      const newCart = [...cartContent];
+      setCartContent(newCart);
     }
   };
   return (

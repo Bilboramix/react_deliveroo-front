@@ -1,31 +1,42 @@
-import { useState, useEffect } from "react";
-
-const Line = ({ item }) => {
-  const [counter, setCounter] = useState(1);
-
-  useEffect(() => {}, []);
-
+const Line = ({ cartContent, setCartContent }) => {
   return (
     <>
-      <div className="counter">
-        <button
-          onClick={() => {
-            setCounter(counter - 1);
-          }}
-        >
-          -
-        </button>
-        <span>{counter}</span>
-        <button
-          onClick={() => {
-            setCounter(counter + 1);
-          }}
-        >
-          +
-        </button>
-      </div>
-      <p className="item-title">{item.title}</p>
-      <p className="item-price">{(item.price * counter).toFixed(2)} €</p>
+      {cartContent.map((item, index) => {
+        return (
+          <div key={item.id} className="cart-content">
+            <div className="line">
+              <div className="counter">
+                <button
+                  onClick={() => {
+                    const newCart = [...cartContent];
+                    newCart[index].quantity = cartContent[index].quantity - 1;
+                    setCartContent(newCart);
+                    if (item.quantity < 1) {
+                      const newCart = [...cartContent];
+                      newCart.splice(index, 1);
+                      setCartContent(newCart);
+                    }
+                  }}
+                >
+                  -
+                </button>
+                <span>{item.quantity}</span>
+                <button
+                  onClick={() => {
+                    const newCart = [...cartContent];
+                    newCart[index].quantity = cartContent[index].quantity + 1;
+                    setCartContent(newCart);
+                  }}
+                >
+                  +
+                </button>
+              </div>
+              <p className="item-title">{item.title}</p>
+              <p className="item-price">{(item.price * item.quantity).toFixed(2)} €</p>
+            </div>
+          </div>
+        );
+      })}
     </>
   );
 };

@@ -5,7 +5,7 @@ const Categories = ({ data, cartContent, setCartContent }) => {
       {data.categories.map((category, index) => {
         return (
           <>
-            {index < 6 && (
+            {category.meals.length > 0 && (
               <div key={index} className="category">
                 <h2>{category.name}</h2>
                 <div className="meals">

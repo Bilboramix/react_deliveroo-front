@@ -176,15 +176,17 @@ p {
 
 .counter {
   display: flex;
-  flex: 1;
+  width: 70px;
 }
 
 .item-title {
   flex: 3;
+  width: 160px;
+  margin: 0 10px;
 }
 
 .item-price {
-  flex: 1;
+  width: 70px;
 }
 
 .prices {

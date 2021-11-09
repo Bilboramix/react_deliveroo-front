@@ -8,28 +8,23 @@ const Cart = ({ cartContent, setCartContent }) => {
       {cartContent.length === 0 && <p>Votre panier est vide</p>}
       {cartContent.length > 0 && (
         <div>
-          {cartContent.map((item, index) => {
-            return (
-              <div key={item.id} className="cart-content">
-                <div className="line">
-                  <Line item={item} />
-                </div>
-              </div>
-            );
-          })}
+          <Line setCartContent={setCartContent} cartContent={cartContent} />
           <div className="sous-total">
             <p className="prices">
               <span>Sous-Total</span>
-              <span>Addition</span>
+              {cartContent.forEach((item) => {
+                total = total + item.price * item.quantity;
+              })}
+              <span>{total.toFixed(2)} €</span>
             </p>
             <p className="prices">
               <span>Frais de livraison</span>
-              <span>{fee} €</span>
+              <span>{fee.toFixed(2)} €</span>
             </p>
           </div>
           <div className="total prices">
             <span>Total</span>
-            <span>addition+fee</span>
+            <span>{(total + fee).toFixed(2)} €</span>
           </div>
         </div>
       )}
